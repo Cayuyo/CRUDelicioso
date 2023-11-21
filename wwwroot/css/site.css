@@ -1,0 +1,104 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.add{
+  display: flex;
+  margin: 15px;
+}
+
+.home{
+  border-right: 2px solid black;
+}
+
+.new{
+  text-decoration: underline;
+  color: #258cfb;
+}
+
+.formulario{
+  width: 100%;
+  margin: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.part1{
+  display: flex;
+  flex-direction: column;
+}
+
+.part2{
+  margin-top: 20px;
+}
+
+.part3{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-form {
+  width: 100%; /* Asegura que el formulario ocupa todo el ancho disponible */
+}
+
+select{
+  width: 100px;
+}
+
+p{
+  margin: 0;
+}
+
+.plato{
+  font-size: 18pt;
+  border-bottom: 2px black solid;
+  display: inline-flex;
+  margin-bottom: 20px;
+}
+
+.form{
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+

@@ -1,0 +1,39 @@
+﻿@model Plato
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (ViewBag.AlertMessage != null)
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.AlertMessage
+    </div>
+}
+
+@if (TempData["EditSuccessMessage"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["EditSuccessMessage"]
+        </div>
+    }
+
+<div class='content'>
+    <div class='wrap'>
+        <h1>Bienvenido a CRUDelicioso!!</h1>
+        <div class='add'>
+            <a class="nav-link text-dark home" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+            <a class="nav-link new" asp-area="" asp-controller="Home" asp-action="Create">Agregar Plato</a>
+        </div>
+        <p>¡Mira algunos platos recientes!</p>
+        <br>
+    </div>
+</div>
+
+
+@{
+    foreach (var x in @ViewBag.ListaPlatos)
+    {
+        <p><a href="Home/Plato/@x.PlatoId">@x.Nombre</a> by @x.Chef</p>
+    }
+}

@@ -1,0 +1,32 @@
+@model Plato
+
+
+<div class='content'>
+    <div class='wrap'>
+        <h1>Bienvenido a CRUDelicioso!!</h1>
+        <div class='add'>
+            <a class="nav-link text-dark home" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+            <a class="nav-link new" asp-area="" asp-controller="Home" asp-action="Create">Agregar Plato</a>
+        </div>
+    </div>
+</div>
+
+@{
+    foreach (var x in @ViewBag.elPlato)
+    {
+        <div class='plato'>
+            <p><a href="Home/Plato/@x.PlatoId">@x.Nombre</a> by @x.Chef</p>
+        </div>
+        <p class="descripcion">@x.Descripcion</p>
+        <p><strong>Calorias:</strong> @x.Calorias</p>
+        <p><strong>Sabor: </strong> @x.Sabor</p>
+        <div class='form'>
+            <form action="/Home/Plato/@x.PlatoId/Eliminar" method="post">
+                <input class="btn btn-danger" type="submit" value="Eliminar">
+            </form>
+            <form action="/Home/Plato/@x.PlatoId/Editar" method="post">
+                <input class="btn btn-warning" type="submit" value="Editar">
+            </form>
+        </div>
+    }
+}

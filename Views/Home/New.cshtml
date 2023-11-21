@@ -1,0 +1,44 @@
+@using CRUDelicioso.Models
+@model Plato
+
+<div class='content'>
+    <div class='wrap'>
+        <div class='titulo'>
+            <h1>Agrega un nuevo Plato!</h1>
+        </div>
+        <div class='formulario'>
+            <form asp-action="Create" asp-controller="Home" method="post">
+                <div class="part1">
+                    <span asp-validation-for="Chef"></span>
+                    <label asp-for="Chef">Nombre del Chef: </label>
+                    <input asp-for="Chef">
+
+                    <span asp-validation-for="Nombre"></span>
+                    <label asp-for="Nombre">Nombre del Plato: </label>
+                    <input asp-for="Nombre">
+
+                    <span asp-validation-for="Calorias"></span>
+                    <label asp-for="Calorias"># de Calorias: </label>
+                    <input asp-for="Calorias">
+                </div>
+                <div class='part2'>
+                    <span asp-validation-for="Sabor"></span>
+                    <label asp-for="Sabor">Sabor: </label>
+                    <select asp-for="Sabor">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class='part3'>
+                    <p>Descripcion: </p>
+                    <textarea asp-for="Descripcion" rows="4"></textarea><br>
+                    <input class="btn btn-primary" type="submit" value="Agregar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
